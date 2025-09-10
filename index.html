@@ -1,1 +1,239 @@
-new file
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+    background-image: url(bg\ image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    }
+    
+    /* AI Image Styles */
+    .nav-ai-image {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+    }
+    
+    .ai-nav-img {
+        width: 90px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #00ff88;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    }
+    
+    .ai-nav-img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+    }
+    
+    .ai-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .ai-section-img {
+        width: 250px;
+        height: 120px;
+        border-radius: 15px;
+        object-fit: cover;
+        border: 3px solid #00ff88;
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+        transition: all 0.3s ease;
+    }
+    
+    .ai-section-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+    }
+    
+    @media (max-width: 768px) {
+        .nav-ai-image {
+            margin-left: 10px;
+        }
+        
+        .ai-nav-img {
+            width: 30px;
+            height: 30px;
+        }
+        
+        .ai-header {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .ai-section-img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+    </style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="enhanced-styles.css">
+    <link rel="stylesheet" href="modal-styles.css">
+    <script src="aiIntegration.js"></script>
+  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Krushna Nawale">
+    <meta name="description" content="Agritech – Intelligent Agriculture System for AI-powered farming solutions developed by Krushna Nawale.">
+    <title>Agritech – Smart Agriculture Web Application by Krushna Nawale</title>
+<body >
+    
+    <div class="banner">
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="logo.png" class="logo">
+            <span class="brand-name">Agritech</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="crope.html">Seeds</a></li>
+            <li><a href="fertilizers.html">Fertilizers</a></li>
+            <li><a href="tool.html">Tools</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="help.html">Contact us</a></li>
+            <li><a href="#" id="agritechAI" class="ai-nav">Agritech AI</a></li>
+        </ul>
+        <div class="nav-ai-image">
+            <img src="AI.jpg" alt="AI Technology" class="ai-nav-img">
+        </div>
+       
+
+    </div>
+   
+
+    <div class="content">
+        <div class="hero-content">
+            <h1 class="hero-title">Agritech – Intelligent Farming Solutions</h1>
+            <p class="hero-description">Welcome to Agritech, an intelligent agriculture platform developed by Krushna Nawale. Explore AI-powered farming solutions, smart fertilizer recommendations, and advanced agricultural tools.</p>
+            <div class="cta-buttons">
+                <button class="cta-primary" onclick="scrollToAI()">Explore AI Features</button>
+                <button class="cta-secondary" onclick="scrollToProducts()">View Products</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- AI Info Section -->
+    <section class="ai-section" id="ai-features">
+        <div class="ai-container">
+            <div class="ai-header">
+                <img src="AI.jpg" alt="AI Technology" class="ai-section-img">
+                <h2 class="ai-title">🤖 Agritech AI - Powered Features</h2>
+            </div>
+            <div class="ai-features-grid">
+                <div class="ai-feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Smart Fertilizer Recommendations</h3>
+                    <p>AI-powered suggestions based on crop type and soil conditions</p>
+                </div>
+                <div class="ai-feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Crop Health Monitoring</h3>
+                    <p>Real-time analysis and health tracking for optimal yields</p>
+                </div>
+                <div class="ai-feature-card">
+                    <div class="feature-icon">🌤️</div>
+                    <h3>Weather-Based Advice</h3>
+                    <p>Seasonal recommendations and smart farming tips</p>
+                </div>
+            </div>
+            <div class="ai-interaction">
+                <button id="aiOverviewButton" class="ai-btn primary">What is Agritech AI?</button>
+                <div class="fertilizer-tool">
+                    <input type="text" id="cropTypeInput" placeholder="Enter Crop Type (e.g., wheat, cotton, rice)" class="crop-input"/>
+                    <button id="fertilizerButton" class="ai-btn secondary">Get AI Recommendation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="products-section" id="products">
+        <div class="products-container">
+            <h2 class="section-title">Get All Varieties At One Place</h2>
+            <div class="products-grid">
+                <div class="product-card neon-box">
+                    <div class="card-icon">🌾</div>
+                    <h3>Crops</h3>
+                    <p>Premium quality seeds for optimal harvest</p>
+                    <button class="product-btn"><a href="crope.html">Explore Seeds</a></button>
+                </div>
+                <div class="product-card neon-box">
+                    <div class="card-icon">🧪</div>
+                    <h3>Fertilizers</h3>
+                    <p>AI-recommended fertilizers for better growth</p>
+                    <button class="product-btn"><a href="fertilizers.html">View Fertilizers</a></button>
+                </div>
+                <div class="product-card neon-box">
+                    <div class="card-icon">🛒</div>
+                    <h3>Buy Products</h3>
+                    <p>Purchase seeds, fertilizers and tools online</p>
+                    <button class="product-btn"><a href="mart.html">Shop Now</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+     
+</body>
+
+<body>
+    <footer class="footer">
+        <section class="about">
+            <!--<h1>We Provides</h1> -->
+            <div class="about-sub">
+    
+            </div>
+            <div class="subscribe">
+                <h2>Stay up to date with New Seeds varities</h2>
+                <form action="mailto:krushnanawale4142@gmail.com" method="POST" class="subscribe-box">
+    
+                    <input required type="email" name="subscription_email" placeholder="Enter your Email Address" />
+    
+    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+    
+            <div class="about-companies">
+                <h1><span>Connect with Us....</span></h1>
+                <div class="company-logos">
+                    <a href="https://github.com/Krushna4142" target="_blank" class="fa fa-github"></a>
+                    <a href="https://www.linkedin.com/in/krushna4142/" target="_blank" class="fa fa-linkedin"></a>
+                    <a href="https://x.com/Krishna_05x" target="_blank" class="fa fa-twitter"></a>
+                </div>
+        </section>
+    
+    
+
+        <div class="conect">
+            <hr>
+            <br>
+            <p>Agritech – Intelligent Agriculture System is a comprehensive platform developed by Krushna Nawale as a  project at KIT. This system empowers farmers with AI-powered tools, smart recommendations, and modern agricultural solutions for sustainable farming practices.</p>
+            <br>
+            <p align="center"> 2024 Agritech by Krushna Nawale. All Rights Reserved.</p>
+            
+            <br>
+            <br>
+            <br>
+
+
+        </div>
+        
+    </footer>
+
+</body>
+</html>
