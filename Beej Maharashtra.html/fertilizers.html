@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body{
+    background-image:url(seed\ infobg.webp);
+    background-repeat: no-repeat;
+    background-size: 110% 110%;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    animation: fadeInPage 1s ease-in forwards;
+    }
+    
+    @keyframes fadeInPage {
+        to { opacity: 1; }
+    }
+    
+    /* Enhanced Fertilizer Page Styles */
+    .main-title {
+        text-align: center;
+        color: #ffffff;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        animation: slideInDown 0.8s ease-out;
+    }
+    
+    .subtitle {
+        text-align: center;
+        color: #e8e8e8;
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 3rem;
+        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+        animation: slideInUp 0.8s ease-out 0.2s both;
+    }
+    
+    .fertilizer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    .fertilizer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .fertilizer-card {
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 20px;
+        padding: 2rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        border: 2px solid rgba(40, 167, 69, 0.3);
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .fertilizer-card:nth-child(1) { animation-delay: 0.1s; }
+    .fertilizer-card:nth-child(2) { animation-delay: 0.2s; }
+    .fertilizer-card:nth-child(3) { animation-delay: 0.3s; }
+    .fertilizer-card:nth-child(4) { animation-delay: 0.4s; }
+    
+    .fertilizer-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        border-color: rgba(40, 167, 69, 0.8);
+        box-shadow: 0 15px 40px rgba(40, 167, 69, 0.3);
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+    .card-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    
+    .fertilizer-card:hover .card-icon {
+        transform: scale(1.2) rotate(10deg);
+    }
+    
+    .fertilizer-card h2 {
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    
+    .fertilizer-card p {
+        color: #e8e8e8;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(40, 167, 69, 0.9), rgba(32, 201, 151, 0.9));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 20px;
+    }
+    
+    .fertilizer-card:hover .card-overlay {
+        opacity: 1;
+    }
+    
+    .learn-more {
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Modal Styles */
+    .fertilizer-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .fertilizer-modal.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .modal-content {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(40, 167, 69, 0.1));
+        border-radius: 20px;
+        padding: 2rem;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        border: 2px solid rgba(40, 167, 69, 0.5);
+        transform: scale(0.7);
+        transition: transform 0.3s ease;
+    }
+    
+    .fertilizer-modal.show .modal-content {
+        transform: scale(1);
+    }
+    
+    .modal-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .modal-header h3 {
+        color: #ffffff;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    
+    .modal-body p {
+        color: #e8e8e8;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+    
+    .modal-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+    
+    .modal-btn {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, #28a745, #20c997);
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+    }
+    
+    .btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    
+    @keyframes slideInDown {
+        from {
+            transform: translateY(-30px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideInUp {
+        from {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeInUp {
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .main-title {
+            font-size: 2rem;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+        }
+        
+        .fertilizer-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .fertilizer-card {
+            padding: 1.5rem;
+        }
+        
+        .modal-content {
+            padding: 1.5rem;
+            margin: 1rem;
+        }
+    }
+    
+    </style>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+     integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Krushna Nawale">
+    <meta name="description" content="Agritech – Intelligent Agriculture System for AI-powered farming solutions developed by Krushna Nawale.">
+    <title>Agritech – Smart Agriculture Web Application by Krushna Nawale</title>
+</head>
+<body>  
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.png" class="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="crope.html">Seeds</a></li>
+                <li><a href="fertilizers.html">Fertilizers</a></li>
+                <li><a href="tool.html">Tools</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Contact us</a></li>
+            </ul>
+            
+            </div>
+            <div class="head">
+                <h1 class="main-title">🌾 Smart Fertilizer Solutions</h1>
+                <p class="subtitle">Discover the best fertilizer recommendations for your crops with our curated collection of expert resources</p>
+            </div>
+            <div class="fertilizer-container">
+                <div class="fertilizer-grid">
+                    <div class="fertilizer-card soybean-card" onclick="openFertilizerModal('soybean')">
+                        <div class="card-icon">🌱</div>
+                        <h2>Soybean Fertilizers</h2>
+                        <p>Optimal NPK ratios and organic solutions for maximum soybean yield</p>
+                        <div class="card-overlay">
+                            <span class="learn-more">Click to Learn More</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fertilizer-card cotton-card" onclick="openFertilizerModal('cotton')">
+                        <div class="card-icon">🌾</div>
+                        <h2>Cotton Fertilizers</h2>
+                        <p>Specialized fertilizer programs for premium cotton quality</p>
+                        <div class="card-overlay">
+                            <span class="learn-more">Click to Learn More</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fertilizer-card toor-card" onclick="openFertilizerModal('toor')">
+                        <div class="card-icon">🫘</div>
+                        <h2>Pigeon Pea / TOOR Fertilizers</h2>
+                        <p>Complete nutrition guide for healthy pigeon pea cultivation</p>
+                        <div class="card-overlay">
+                            <span class="learn-more">Click to Learn More</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fertilizer-card mustard-card" onclick="openFertilizerModal('mustard')">
+                        <div class="card-icon">🌻</div>
+                        <h2>Mustard Fertilizers</h2>
+                        <p>Essential nutrients for high-quality mustard seed production</p>
+                        <div class="card-overlay">
+                            <span class="learn-more">Click to Learn More</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gap">
+                <p>.
+
+
+
+                   .
+
+
+
+                    .
+                </p>
+            </div>
+            <body>
+                <footer class="footer">
+                    <section class="about">
+                        <!--<h1>We Provides</h1> -->
+                        <div class="about-sub">
+                
+                        </div>
+                        <div class="subscribe">
+                            <h2>Stay up to date with New Seeds varities</h2>
+                            <form action="mailto:krushnanawale4142@gmail.com" method="POST" class="subscribe-box">
+                
+                                <input required type="email" name="subscription_email" placeholder="Enter your Email Address" />
+                
+                
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+                
+                        <div class="about-companies">
+                            <h1><span>Connect with Us....</span></h1>
+                            <div class="company-logos">
+                                <a href="https://github.com/Krushna4142" target="_blank" class="fa fa-github"></a>
+                                <a href="https://www.linkedin.com/in/krushna4142/" target="_blank" class="fa fa-linkedin"></a>
+                                <a href="https://x.com/Krishna_05x" target="_blank" class="fa fa-twitter"></a>
+                            </div>
+                    </section>
+                
+                
+            
+                    <div class="conect">
+                        <hr>
+                        <br>
+                        <p>Agritech – Intelligent Agriculture System is a comprehensive platform developed by Krushna Nawale as a project at KIT. This system empowers farmers with AI-powered tools, smart recommendations, and modern agricultural solutions for sustainable farming practices.</p>
+                        <br>
+                        <p align="center">© 2024 Agritech by Krushna Nawale. All Rights Reserved.</p>
+                        
+                        <br>
+                        <br>
+                        <br>
+            
+            
+                    </div>
+                    
+                </footer>
+            
+            </body>
+                
+    <script src="aiIntegration.js"></script>
+    
+    <script>
+        const fertilizerData = {
+            soybean: {
+                title: '🌱 Soybean Fertilizers',
+                description: 'Soybeans require balanced nutrition with emphasis on phosphorus and potassium. Optimal NPK ratio is 20-20-0-13 with additional sulfur for protein synthesis.',
+                link: 'https://www.agrifarming.in/best-fertilizer-for-soybean-crop-organic-compost-npk-when-and-how-to-apply'
+            },
+            cotton: {
+                title: '🌾 Cotton Fertilizers',
+                description: 'Cotton needs high potassium for fiber quality and nitrogen for vegetative growth. Recommended NPK ratio is 17-17-17 with micronutrients like boron and zinc.',
+                link: 'https://www.agrifarming.in/best-fertilizer-for-cotton-organic-compost-manure-liquid-npk-and-schedule'
+            },
+            toor: {
+                title: '🫘 Pigeon Pea Fertilizers',
+                description: 'Pigeon pea benefits from phosphorus-rich fertilizers for root development. Use NPK 18-46-0 at planting followed by nitrogen top-dressing.',
+                link: 'https://indiaagronet.com/indiaagronet/new%20product/Contents/Red-Gram-Pigeonpea-Cultivation-Guide.html'
+            },
+            mustard: {
+                title: '🌻 Mustard Fertilizers',
+                description: 'Mustard requires sulfur for oil content enhancement. Optimal fertilizer is NPK 20-20-0-13 with sulfur, applied in split doses.',
+                link: 'https://www.ikisan.com/up-mustard-nutrient-management.html'
+            }
+        };
+        
+        function openFertilizerModal(type) {
+            const data = fertilizerData[type];
+            const modal = document.createElement('div');
+            modal.className = 'fertilizer-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>${data.title}</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p>${data.description}</p>
+                    </div>
+                    <div class="modal-buttons">
+                        <a href="${data.link}" target="_blank" class="modal-btn btn-primary">Learn More</a>
+                        <button onclick="closeFertilizerModal()" class="modal-btn btn-secondary">Close</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 100);
+            
+            // Close on background click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeFertilizerModal();
+                }
+            });
+        }
+        
+        function closeFertilizerModal() {
+            const modal = document.querySelector('.fertilizer-modal');
+            if (modal) {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.remove();
+                }, 300);
+            }
+        }
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeFertilizerModal();
+            }
+        });
+    </script>
+          
+</body>
+</html>
