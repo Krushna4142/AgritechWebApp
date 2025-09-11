@@ -11,7 +11,7 @@ function apple(){
 
     document.getElementById("buyPage").style.display = "block"
 
-    document.getElementById("buyImg").src = "/Images/Fruits&Veg/apple.jpg";
+    document.getElementById("buyImg").src = "soybean.png";
 
     itemName.innerHTML = "Soyabean"
     document.getElementById("buyPage").style.top = "20%"
@@ -22,7 +22,7 @@ function banana(){
 
     document.getElementById("buyPage").style.display = "block"
 
-    document.getElementById("buyImg").src = "/Images/Fruits&Veg/banana.jpg";
+    document.getElementById("buyImg").src = "pegion pea.webp";
 
     itemName.innerHTML = "Toor"
     document.getElementById("buyPage").style.top = "20%"
@@ -32,7 +32,7 @@ function coc(){
 
     document.getElementById("buyPage").style.display = "block"
 
-    document.getElementById("buyImg").src = "/Images/Fruits&Veg/coconut.jpg";
+    document.getElementById("buyImg").src = "wheat.png";
 
     itemName.innerHTML = "Wheat"
     document.getElementById("buyPage").style.top = "20%"
@@ -42,7 +42,7 @@ function coc(){
 function orange(){
     document.getElementById("buyPage").style.display = "block"
 
-    document.getElementById("buyImg").src = "/Images/Fruits&Veg/orange.jpg";
+    document.getElementById("buyImg").src = "cotton.jpeg";
 
     itemName.innerHTML = "Cotton"
     document.getElementById("buyPage").style.top = "20%"
@@ -50,7 +50,7 @@ function orange(){
 function pom(){
     document.getElementById("buyPage").style.display = "block"
 
-    document.getElementById("buyImg").src = "/Images/Fruits&Veg/pomogranate.jpg";
+    document.getElementById("buyImg").src = "Mustard.jpg";
 
     itemName.innerHTML = "Musterd"
     document.getElementById("buyPage").style.top = "20%"
@@ -58,7 +58,7 @@ function pom(){
 function pear(){
     document.getElementById("buyPage").style.display = "block"
 
-    document.getElementById("buyImg").src = "/Images/Fruits&Veg/pear.jpg";
+    document.getElementById("buyImg").src = "millet.jpeg";
 
     itemName.innerHTML = "Millet"
     document.getElementById("buyPage").style.top = "20%"
@@ -66,7 +66,7 @@ function pear(){
 function df(){
     document.getElementById("buyPage").style.display = "block"
 
-    document.getElementById("buyImg").src = "/Images/Fruits&Veg/dragonfruit.jpg";
+    document.getElementById("buyImg").src = "onion.jpg";
 
     itemName.innerHTML = "Onion"
     document.getElementById("buyPage").style.top = "20%"
