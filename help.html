@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body{
+    background-image: url(cantactinfobg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;
+    opacity: 0;
+    animation: fadeInPage 1.2s ease-in forwards;
+    letter-spacing: 0.3px;
+    }
+    
+    @keyframes fadeInPage {
+        to { opacity: 1; }
+    }
+    
+    .contact-section {
+        max-width: 600px;
+        margin: 2rem auto;
+        background: rgba(20, 25, 35, 0.95);
+        padding: 2.5rem;
+        border-radius: 20px;
+        color: #fff;
+        font-family: 'Inter', 'Poppins', sans-serif;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(76, 175, 80, 0.2);
+        transform: translateY(30px);
+        animation: slideInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        transition: all 0.4s ease;
+    }
+    
+    .contact-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+        border: 2px solid rgba(76, 175, 80, 0.4);
+    }
+    
+    @keyframes slideInUp {
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    .contact-section h2 {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+        from { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(40, 167, 69, 0.3); }
+        to { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(40, 167, 69, 0.6); }
+    }
+    
+    .contact-section p {
+        text-align: center;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        color: #ddd;
+    }
+    
+    .contact-section form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .contact-section label {
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #fff;
+    }
+    
+    .contact-section input, .contact-section textarea {
+        padding: 15px 20px;
+        margin-bottom: 1.2rem;
+        border-radius: 12px;
+        border: 2px solid rgba(76, 175, 80, 0.2);
+        background: rgba(40, 45, 55, 0.9);
+        color: #fff;
+        font-size: 1rem;
+        font-family: 'Inter', 'Poppins', sans-serif;
+        width: 100%;
+        box-sizing: border-box;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
+        position: relative;
+    }
+    
+    .contact-section input:hover, .contact-section textarea:hover {
+        border-color: rgba(76, 175, 80, 0.4);
+        background: rgba(50, 55, 65, 0.95);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .contact-section input:focus, .contact-section textarea:focus {
+        outline: none;
+        background: rgba(60, 65, 75, 0.95);
+        border-color: #4CAF50;
+        box-shadow: 0 0 25px rgba(76, 175, 80, 0.5), 0 8px 30px rgba(0, 0, 0, 0.3);
+        transform: translateY(-3px) scale(1.02);
+    }
+    
+    .contact-section button {
+        padding: 16px 32px;
+        background: linear-gradient(135deg, #4CAF50, #45a049, #2e7d32);
+        color: #fff;
+        border-radius: 30px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: 'Inter', 'Poppins', sans-serif;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+    }
+    
+    .contact-section button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+    }
+    
+    .contact-section button:hover::before {
+        left: 100%;
+    }
+    
+    .contact-section button:hover {
+        background: linear-gradient(135deg, #218838, #1ea085);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+    }
+    
+    .contact-section .social-links {
+        text-align: center;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #444;
+    }
+    
+    .contact-section .social-links p {
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+    
+    .contact-section .social-links a {
+        color: #4CAF50;
+        margin: 0 0.8rem;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 25px;
+        background: rgba(76, 175, 80, 0.1);
+        border: 2px solid transparent;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .contact-section .social-links a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.6s;
+    }
+    
+    .contact-section .social-links a:hover::before {
+        left: 100%;
+    }
+    
+    .contact-section .social-links a:hover {
+        color: #fff;
+        background: linear-gradient(135deg, #4CAF50, #45a049);
+        border: 2px solid #4CAF50;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+        text-decoration: none;
+    }
+    
+    .contact-section .footer-note {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        color: #aaa;
+        border-top: 1px solid #444;
+        padding-top: 1rem;
+    }
+    
+    /* Success Popup Styles */
+    .success-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .success-popup.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .popup-content {
+        background: linear-gradient(135deg, #28a745, #20c997);
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        color: white;
+        transform: scale(0.7);
+        transition: transform 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .success-popup.show .popup-content {
+        transform: scale(1);
+    }
+    
+    .popup-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        animation: bounce 0.6s ease;
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-10px); }
+        60% { transform: translateY(-5px); }
+    }
+    
+    .fade-in-element {
+        opacity: 0;
+        transform: translateX(-20px);
+        animation: fadeInLeft 0.6s ease forwards;
+    }
+    
+    @keyframes fadeInLeft {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .contact-section {
+            padding: 1rem;
+            margin: 1rem;
+        }
+        
+        .contact-section h2 {
+            font-size: 1.5rem;
+        }
+        
+        .popup-content {
+            margin: 1rem;
+            padding: 1.5rem;
+        }
+    }
+    </style>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+     integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Krushna Nawale">
+    <meta name="description" content="Agritech – Intelligent Agriculture System for AI-powered farming solutions developed by Krushna Nawale.">
+    <title>Agritech – Smart Agriculture Web Application by Krushna Nawale</title>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth animations to form elements
+            const formElements = document.querySelectorAll('.contact-section input, .contact-section textarea');
+            formElements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.1}s`;
+                element.classList.add('fade-in-element');
+            });
+            
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                showSuccessPopup();
+                // Submit form after showing popup
+                setTimeout(() => {
+                    event.target.submit();
+                }, 2000);
+            });
+        });
+        
+        function showSuccessPopup() {
+            const popup = document.createElement('div');
+            popup.className = 'success-popup';
+            popup.innerHTML = `
+                <div class="popup-content">
+                    <div class="popup-icon">✓</div>
+                    <h3>Success!</h3>
+                    <p>Your message has been sent successfully. We'll get back to you within 24-48 hours.</p>
+                </div>
+            `;
+            document.body.appendChild(popup);
+            
+            setTimeout(() => {
+                popup.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                popup.classList.remove('show');
+                setTimeout(() => popup.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</head>
+<body>  
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.png" class="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="crope.html">Seeds</a></li>
+                <li><a href="fertilizers.html">Fertilizers</a></li>
+                <li><a href="tool.html">Tools</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Contact us</a></li>
+            </ul>
+            </div>
+            <section class="contact-section">
+                <h2>📞Contact Us</h2>
+                <p>For any technical support, collaboration, or project inquiries, feel free to reach out directly to Krushna Nawale.<br>
+                I will respond within 24–48 hours with comprehensive assistance.</p>
+
+                <form id="contactForm" action="https://formsubmit.co/krushnanawale4142@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Agritech">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="#">
+                    
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name" placeholder="Your full name" required>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="user_email" placeholder="your.email@example.com" required>
+
+                    <label for="message">Your Query / Message:</label>
+                    <textarea id="message" name="message" placeholder="Write your query here..." rows="5" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+
+                <div class="social-links">
+                    <p>Follow Me:</p>
+                    <a href="https://github.com/Krushna4142" target="_blank">GitHub</a> |
+                    <a href="https://www.linkedin.com/in/krushna4142/" target="_blank">LinkedIn</a> |
+                    <a href="https://x.com/Krishna_05x" target="_blank">Twitter</a>
+                </div>
+
+                <p class="footer-note">© 2024 Agritech by Krushna Nawale. All Rights Reserved.</p>
+            </section>
+            <footer class="footer">
+                    <section class="about">
+                        <!--<h1>We Provides</h1> -->
+                        <div class="about-sub">
+                
+                        </div>
+                
+                        <div class="about-companies">
+                            <h1><span>Connect with Us....</span></h1>
+                            <div class="company-logos">
+                                <a href="https://github.com/Krushna4142" target="_blank" class="fa fa-github"></a>
+                                <a href="https://www.linkedin.com/in/krushna4142/" target="_blank" class="fa fa-linkedin"></a>
+                                <a href="https://x.com/Krishna_05x" target="_blank" class="fa fa-twitter"></a>
+                            </div>
+                    </section>
+                
+                
+            
+                    <div class="conect">
+                        <hr>
+                        <br>
+                        <p>Agritech – Intelligent Agriculture System is a comprehensive platform developed by Krushna Nawale as a project at KIT. This system empowers farmers with AI-powered tools, smart recommendations, and modern agricultural solutions for sustainable farming practices.</p>
+                        <br>
+                        <p align="center"> 2024 Agritech by Krushna Nawale. All Rights Reserved.</p>
+                        
+                        <br>
+                        <br>
+                        <br>
+            
+                    </div>
+                    
+                </footer>
+            
+            </body>
+</body>
+</html>

@@ -1,0 +1,123 @@
+/* AI Modal Styles */
+.ai-modal {
+    display: flex;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.ai-modal-content {
+    background: linear-gradient(135deg, rgba(0, 50, 100, 0.9), rgba(0, 0, 0, 0.9));
+    margin: auto;
+    padding: 40px;
+    border: 2px solid #00ff88;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    animation: slideInDown 0.5s ease-out;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 60px rgba(0, 255, 136, 0.3);
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    color: #00ff88;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #ff6b6b;
+    transform: scale(1.2);
+}
+
+.ai-modal-content h2 {
+    color: #00ff88;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-shadow: 0 0 20px #00ff88;
+}
+
+.ai-features-list {
+    margin-bottom: 30px;
+}
+
+.ai-feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border-left: 4px solid #00ff88;
+    transition: all 0.3s ease;
+}
+
+.ai-feature-item:hover {
+    background: rgba(0, 255, 136, 0.1);
+    transform: translateX(10px);
+}
+
+.ai-feature-item h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.ai-feature-item p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.ai-modal-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #00ff88, #0088ff);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ai-modal-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 255, 136, 0.5);
+}
+
+@media (max-width: 768px) {
+    .ai-modal-content {
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .ai-modal-content h2 {
+        font-size: 1.5rem;
+    }
+}
