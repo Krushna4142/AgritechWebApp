@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+
+title: Agritech
+
+message: >
+  If you use this project, please cite it using the metadata below.
+
+authors:
+  - family-names: Nawale
+    given-names: Krushna
+
+repository-code: https://github.com/Krushna4142/Agritech
+
+license: MIT
+
+version: 1.0.0
+
+date-released: 2024-01-01
