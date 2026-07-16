@@ -1,3 +1,34 @@
+<p align="center">
+
+<img src="assets/banner.png">
+
+</p>
+
+<h1 align="center">
+🌾 Agritech
+</h1>
+
+<p align="center">
+
+Intelligent Agriculture System powered by JavaScript & AI Recommendations
+
+</p>
+
+<p align="center">
+
+<img src="https://img.shields.io/github/stars/Krushna4142/AgritechWebApp?style=for-the-badge">
+
+<img src="https://img.shields.io/github/forks/Krushna4142/AgritechWebApp?style=for-the-badge">
+
+<img src="https://img.shields.io/github/issues/Krushna4142/AgritechWebApp?style=for-the-badge">
+
+<img src="https://img.shields.io/github/license/Krushna4142/AgritechWebApp?style=for-the-badge">
+
+<img src="https://img.shields.io/github/last-commit/Krushna4142/AgritechWebApp?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Open%20Source-Yes-success?style=for-the-badge">
+
+</p>
 # Agritech – Intelligent Agriculture System
 
 **Developed by Krushna Nawale | KIT**
@@ -27,6 +58,7 @@ Agritech is a comprehensive web-based agriculture management system designed as 
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 - Local web server (optional, for development)
 
@@ -68,20 +100,25 @@ AgritechApp/
 ## 🔧 Key Features Implementation
 
 ### AI Fertilizer Recommendation System
+
 ```javascript
 // Smart fertilizer recommendations based on crop type
 async function getFertilizerRecommendation(cropType) {
-    const recommendations = {
-        'wheat': 'Use NPK 20-20-20 for optimal growth',
-        'cotton': 'Use Potassium-based fertilizer with NPK 17-17-17',
-        'rice': 'Use Nitrogen-based fertilizer with NPK 20-10-10'
-        // ... more crops
-    };
-    return recommendations[cropType.toLowerCase()] || "General-purpose fertilizer recommended";
+  const recommendations = {
+    wheat: "Use NPK 20-20-20 for optimal growth",
+    cotton: "Use Potassium-based fertilizer with NPK 17-17-17",
+    rice: "Use Nitrogen-based fertilizer with NPK 20-10-10",
+    // ... more crops
+  };
+  return (
+    recommendations[cropType.toLowerCase()] ||
+    "General-purpose fertilizer recommended"
+  );
 }
 ```
 
 ### Interactive Project Overview
+
 - Click "What is this Project?" button for detailed information
 - Real-time fertilizer recommendations based on user input
 - Responsive design for mobile and desktop users
@@ -101,6 +138,7 @@ Computer Engineering Student | KIT
 Full Stack Developer | AI & Cloud Enthusiast
 
 ### Connect with me:
+
 - **GitHub**: [https://github.com/Krushna4142](https://github.com/Krushna4142)
 - **LinkedIn**: [https://www.linkedin.com/in/krushna4142/](https://www.linkedin.com/in/krushna4142/)
 - **Twitter**: [https://x.com/Krishna_05x](https://x.com/Krishna_05x)
@@ -109,6 +147,7 @@ Full Stack Developer | AI & Cloud Enthusiast
 ## 📧 Contact & Support
 
 For technical support, collaboration opportunities, or project inquiries:
+
 - **Email**: krushnanawale4142@gmail.com
 - **Response Time**: 24-48 hours
 - **Project Type**: Engineering Project
@@ -116,6 +155,7 @@ For technical support, collaboration opportunities, or project inquiries:
 ## 🎯 Project Goals
 
 This project demonstrates:
+
 - **Practical Application**: Real-world agricultural problem solving
 - **Technical Skills**: Frontend development with JavaScript integration
 - **AI Implementation**: Simple but effective recommendation algorithms
