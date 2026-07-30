@@ -1,14 +1,16 @@
-<p align="center">
-  <img src="banner.png" alt="Agritech Banner" width="100%">
-</p>
+
 
 <h1 align="center">
 🌾 Agritech – Intelligent Agriculture System
 </h1>
-
 <p align="center">
 <b>Empowering Smart Farming with AI-Powered Crop & Fertilizer Recommendations</b>
-<br><br>
+
+<p align="center">
+  <img src="banner.png" alt="Agritech Banner" width="100%">
+</p>
+
+<br>
 An agriculture-focused web platform that helps farmers make better farming decisions using intelligent recommendations, crop information, and modern web technologies.
 </p>
 
